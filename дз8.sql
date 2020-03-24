@@ -1,5 +1,5 @@
 
--- задание 1
+--Р—Р°РґР°РЅРёРµ 1
 
 START TRANSACTION;
 
@@ -7,7 +7,7 @@ INSERT INTO sample.users SELECT * FROM shop.users
 	WHERE users.id = 1;
 COMMIT;
 
-
+--Р—Р°РґР°РЅРёРµ 2 
 SELECT * FROM products;
 SELECT * FROM catalogs;
 
@@ -20,7 +20,7 @@ CREATE VIEW prod AS
 			ON products.catalog_id = catalogs.id;
 
 
--- Создание функции		
+-- РЎРѕР·РґР°РЅРёРµ С„СѓРЅРєС†РёРё		
 
 CREATE FUNCTION hello ()
 RETURNS varchar(255)
@@ -29,18 +29,18 @@ BEGIN
 	SET HOUR = hour(now());
 	CASE
 		WHEN HOUR between 6 AND 11 THEN 
-			RETURN 'Доброе утро';
+			RETURN 'Р”РѕР±СЂРѕРµ СѓС‚СЂРѕ';
 		WHEN hour BETWEEN 12 AND 17 THEN 
-			RETURN 'Добрый день';
+			RETURN 'Р”РѕР±СЂС‹Р№ РґРµРЅСЊ';
 		WHEN hour BETWEEN 18 AND 23 THEN 
-			RETURN 'Добрый вечер';
+			RETURN 'Р”РѕР±СЂС‹Р№ РІРµС‡РµСЂ';
 		WHEN hour BETWEEN 0 AND 5 THEN 
-			RETURN 'Доброй ночи';
+			RETURN 'Р”РѕР±СЂРѕР№ РЅРѕС‡Рё';
 		END CASE;
 END
 
 
--- Создание триггера
+-- РЎРѕР·РґР°РЅРёРµ С‚СЂРёРіРіРµСЂР°
 
 DROP TRIGGER insert_products;
 
